@@ -27,7 +27,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-background/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -49,7 +49,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 text-sm font-medium"
+                className="text-gray-700 hover:text-yellow-400 transition-colors duration-300 text-sm font-medium"
               >
                 {item.label}
               </a>
@@ -57,10 +57,10 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+92" className="text-gray-300 hover:text-yellow-400 transition-colors">
+            <a href="tel:+92" className="text-gray-700 hover:text-yellow-400 transition-colors">
               <Phone className="w-5 h-5" />
             </a>
-            <a href="mailto:info@asca.com" className="text-gray-300 hover:text-yellow-400 transition-colors">
+            <a href="mailto:info@asca.com" className="text-gray-700 hover:text-yellow-400 transition-colors">
               <Mail className="w-5 h-5" />
             </a>
             <Button className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300">

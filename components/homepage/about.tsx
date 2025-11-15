@@ -4,7 +4,7 @@ import { CheckCircle2, Target, Award, Heart } from 'lucide-react';
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-black relative overflow-hidden">
+  <section id="about" className="py-24 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl" />
 
@@ -15,15 +15,15 @@ export function About() {
               <span className="text-yellow-400 text-sm font-medium">About Us</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
               Professionals with Strong Background & Expertise
             </h2>
 
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed">
               Abdullah Shahid & Co. Chartered Accountants is a group of professionals with a
               strong background in accounting, consultancy, tax, and service management. We
               provide reliable and professional services with integrity, excellence, and
-              confidentiality to meet clients' individual requirements.
+              confidentiality to meet clients&apos; individual requirements.
             </p>
 
             <div className="space-y-4">
@@ -32,7 +32,7 @@ export function About() {
                   <Target className="w-6 h-6 text-yellow-400 group-hover:text-black transition-colors" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Client-Centered Approach</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Client-Centered Approach</h3>
                   <p className="text-gray-400">
                     We work closely with clients to understand their unique needs and goals,
                     developing customized financial and tax solutions.
@@ -45,7 +45,7 @@ export function About() {
                   <Award className="w-6 h-6 text-yellow-400 group-hover:text-black transition-colors" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Excellence & Integrity</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Excellence & Integrity</h3>
                   <p className="text-gray-400">
                     Our commitment to excellence and integrity ensures the highest quality of
                     service for every client engagement.
@@ -58,7 +58,7 @@ export function About() {
                   <Heart className="w-6 h-6 text-yellow-400 group-hover:text-black transition-colors" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Confidentiality Guaranteed</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Confidentiality Guaranteed</h3>
                   <p className="text-gray-400">
                     We maintain the highest standards of confidentiality in all our client
                     relationships and services.

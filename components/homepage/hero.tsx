@@ -14,9 +14,9 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-black to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-background to-transparent" />
 
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/20 rounded-full blur-3xl animate-pulse" />
@@ -36,14 +36,14 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Get Your Finances{' '}
               <span className="text-yellow-400 inline-block animate-in fade-in zoom-in duration-700 delay-300">
                 In Order
               </span>
             </h1>
 
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed">
               Abdullah Shahid & Co. Chartered Accountants provides reliable and professional
               services with integrity, excellence, and confidentiality to meet your individual
               requirements.
@@ -71,22 +71,22 @@ export function Hero() {
                 <div className="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <TrendingUp className="w-6 h-6 text-yellow-400" />
                 </div>
-                <p className="text-2xl font-bold text-white">15+</p>
-                <p className="text-sm text-gray-400">Years Experience</p>
+                <p className="text-2xl font-bold text-foreground">15+</p>
+                <p className="text-sm text-gray-600">Years Experience</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <Users className="w-6 h-6 text-yellow-400" />
                 </div>
-                <p className="text-2xl font-bold text-white">500+</p>
-                <p className="text-sm text-gray-400">Clients Served</p>
+                <p className="text-2xl font-bold text-foreground">500+</p>
+                <p className="text-sm text-gray-600">Clients Served</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <Shield className="w-6 h-6 text-yellow-400" />
                 </div>
-                <p className="text-2xl font-bold text-white">100%</p>
-                <p className="text-sm text-gray-400">Confidential</p>
+                <p className="text-2xl font-bold text-foreground">100%</p>
+                <p className="text-sm text-gray-600">Confidential</p>
               </div>
             </div>
           </div>
@@ -99,19 +99,38 @@ export function Hero() {
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-3xl rotate-6 animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-tl from-yellow-400/20 to-transparent rounded-3xl -rotate-6" />
-              <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 shadow-2xl">
+              <div className="relative bg-card rounded-3xl p-8 shadow-2xl border border-yellow-400/20">
                 <div className="space-y-6">
-                  <div className="h-4 bg-yellow-400/20 rounded animate-pulse" />
-                  <div className="h-4 bg-yellow-400/10 rounded animate-pulse delay-100" />
-                  <div className="h-4 bg-yellow-400/20 rounded animate-pulse delay-200" />
-                  <div className="grid grid-cols-2 gap-4 mt-8">
-                    <div className="bg-yellow-400/10 rounded-lg p-4">
-                      <div className="h-8 w-8 bg-yellow-400 rounded mb-2" />
-                      <div className="h-3 bg-yellow-400/20 rounded" />
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold text-foreground">Our Achievements</h3>
+                    <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-black" />
                     </div>
-                    <div className="bg-yellow-400/10 rounded-lg p-4">
-                      <div className="h-8 w-8 bg-yellow-400 rounded mb-2" />
-                      <div className="h-3 bg-yellow-400/20 rounded" />
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full" />
+                      <p className="text-gray-600">ICAP Certified Professionals</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full" />
+                      <p className="text-gray-600">ISO 9001:2015 Certified</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full" />
+                      <p className="text-gray-600">Tax Excellence Award 2023</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 mt-8">
+                    <div className="bg-yellow-400/10 rounded-lg p-4 border border-yellow-400/20">
+                      <div className="text-3xl font-bold text-yellow-400 mb-1">98%</div>
+                      <div className="text-sm text-gray-600">Client Satisfaction</div>
+                    </div>
+                    <div className="bg-yellow-400/10 rounded-lg p-4 border border-yellow-400/20">
+                      <div className="text-3xl font-bold text-yellow-400 mb-1">24/7</div>
+                      <div className="text-sm text-gray-600">Support Available</div>
                     </div>
                   </div>
                 </div>

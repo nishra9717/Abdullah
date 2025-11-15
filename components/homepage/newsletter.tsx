@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export function Newsletter() {
   return (
-    <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+  <section className="py-24 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-400/5 via-transparent to-transparent" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -20,11 +20,12 @@ export function Newsletter() {
                 <Mail className="w-10 h-10 text-black" />
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Stay Updated
               </h2>
+              
 
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 Subscribe to our newsletter and get the latest tax updates, financial tips, and exclusive offers.
               </p>
 
@@ -40,7 +41,7 @@ export function Newsletter() {
                   <Input
                     type="email"
                     placeholder="Enter your email"
-                    className="bg-black border-gray-700 text-white focus:border-yellow-400 flex-1"
+                    className="bg-input border-border text-foreground focus:border-primary flex-1"
                   />
                   <Button className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 whitespace-nowrap">
                     Subscribe Now

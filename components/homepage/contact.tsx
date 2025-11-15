@@ -23,8 +23,8 @@ const offices = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-400/10 via-black to-black" />
+    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-400/10 via-background to-transparent" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
@@ -43,7 +43,7 @@ export function Contact() {
           {offices.map((office, index) => (
             <Card
               key={index}
-              className="bg-gray-900/50 border-gray-800 hover:border-yellow-400/50 transition-all duration-300"
+              className="bg-card/50 border-border hover:border-yellow-400/50 transition-all duration-300"
             >
               <CardHeader>
                 <CardTitle className="text-2xl text-yellow-400">{office.location}</CardTitle>
@@ -66,7 +66,7 @@ export function Contact() {
           ))}
         </div>
 
-        <Card className="bg-gray-900/50 border-gray-800 max-w-4xl mx-auto">
+  <Card className="bg-card/50 border-border max-w-4xl mx-auto">
           <CardHeader>
             <CardTitle className="text-2xl text-white text-center">Send Us a Message</CardTitle>
             <CardDescription className="text-center">
@@ -80,7 +80,7 @@ export function Contact() {
                   <label className="text-sm font-medium text-gray-300">Name</label>
                   <Input
                     placeholder="Your name"
-                    className="bg-black border-gray-700 text-white focus:border-yellow-400"
+                    className="bg-input border-border text-foreground focus:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -88,7 +88,7 @@ export function Contact() {
                   <Input
                     type="email"
                     placeholder="your@email.com"
-                    className="bg-black border-gray-700 text-white focus:border-yellow-400"
+                    className="bg-input border-border text-foreground focus:border-primary"
                   />
                 </div>
               </div>
@@ -96,7 +96,7 @@ export function Contact() {
                 <label className="text-sm font-medium text-gray-300">Subject</label>
                 <Input
                   placeholder="What can we help you with?"
-                  className="bg-black border-gray-700 text-white focus:border-yellow-400"
+                  className="bg-input border-border text-foreground focus:border-primary"
                 />
               </div>
               <div className="space-y-2">
@@ -104,7 +104,7 @@ export function Contact() {
                 <Textarea
                   placeholder="Tell us more about your needs..."
                   rows={5}
-                  className="bg-black border-gray-700 text-white focus:border-yellow-400"
+                  className="bg-input border-border text-foreground focus:border-primary"
                 />
               </div>
               <Button className="w-full bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
@@ -126,17 +126,7 @@ export function Contact() {
             </CardContent>
           </Card>
 
-          <div className="mt-8">
-            <a
-              href="https://wa.me/92XXXXXXXXX"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 hover:scale-105"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Message on WhatsApp</span>
-            </a>
-          </div>
+          
         </div>
       </div>
     </section>
