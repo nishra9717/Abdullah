@@ -31,11 +31,11 @@ export function Hero() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
-            <div className="inline-block px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full">
+            {/* <div className="inline-block px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full">
               <span className="text-yellow-400 text-sm font-medium">
                 Professional Accounting Services
               </span>
-            </div>
+            </div> */}
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Get Your Finances{' '}
@@ -119,11 +119,11 @@ export function Hero() {
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full" />
-                      <p className="text-gray-600">ISO 9001:2015 Certified</p>
+                      <p className="text-gray-600">100% Client Satisfaction</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full" />
-                      <p className="text-gray-600">Tax Excellence Award 2023</p>
+                      <p className="text-gray-600">Best Tax Consultancy</p>
                     </div>
                   </div>
 
