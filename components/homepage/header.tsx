@@ -36,7 +36,7 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-2">
              <Image src="/logo.png" alt="logo" width={48} height={30} />
               <div>
-                <h3 className="text-yellow-400 font-bold text-lg leading-tight">
+                <h3 className="text-black font-bold text-lg leading-tight">
                   Abdullah Shahid & Co.
                 </h3>
                 <p className="text-gray-400 text-xs">Chartered Accountants</p>

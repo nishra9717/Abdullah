@@ -68,7 +68,7 @@ export function Services() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <div className="inline-block px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full mb-4">
-            <span className="text-yellow-400 text-sm font-medium">Our Services</span>
+            <span className="text-yellow-400 text-2xl  md:text-5xl  font-medium">Our Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Comprehensive Financial Solutions

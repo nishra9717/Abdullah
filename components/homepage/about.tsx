@@ -12,7 +12,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div className="inline-block px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full">
-              <span className="text-yellow-400 text-sm font-medium">About Us</span>
+              <span className="text-yellow-400  md:text-5xl text-sm font-medium">About Us</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
@@ -73,24 +73,24 @@ export function About() {
               <div className="space-y-6 pt-12">
                 <div className="bg-gradient-to-br from-yellow-400/20 to-transparent rounded-2xl p-8 backdrop-blur-sm border border-yellow-400/20">
                   <CheckCircle2 className="w-12 h-12 text-yellow-400 mb-4" />
-                  <h3 className="text-3xl font-bold text-white mb-2">500+</h3>
+                  <h3 className="text-3xl font-bold text-black mb-2">500+</h3>
                   <p className="text-gray-400">Happy Clients</p>
                 </div>
                 <div className="bg-gradient-to-br from-yellow-400/20 to-transparent rounded-2xl p-8 backdrop-blur-sm border border-yellow-400/20">
                   <CheckCircle2 className="w-12 h-12 text-yellow-400 mb-4" />
-                  <h3 className="text-3xl font-bold text-white mb-2">100%</h3>
+                  <h3 className="text-3xl font-bold text-black mb-2">100%</h3>
                   <p className="text-gray-400">Success Rate</p>
                 </div>
               </div>
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-yellow-400/20 to-transparent rounded-2xl p-8 backdrop-blur-sm border border-yellow-400/20">
                   <CheckCircle2 className="w-12 h-12 text-yellow-400 mb-4" />
-                  <h3 className="text-3xl font-bold text-white mb-2">15+</h3>
+                  <h3 className="text-3xl font-bold text-black mb-2">15+</h3>
                   <p className="text-gray-400">Years Experience</p>
                 </div>
                 <div className="bg-gradient-to-br from-yellow-400/20 to-transparent rounded-2xl p-8 backdrop-blur-sm border border-yellow-400/20">
                   <CheckCircle2 className="w-12 h-12 text-yellow-400 mb-4" />
-                  <h3 className="text-3xl font-bold text-white mb-2">24/7</h3>
+                  <h3 className="text-3xl font-bold text-black mb-2">24/7</h3>
                   <p className="text-gray-400">Support Available</p>
                 </div>
               </div>
