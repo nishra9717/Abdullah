@@ -32,48 +32,43 @@ export default function AboutUs() {
               <span className="block text-yellow-400 mt-2">Chartered Accountants</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Providing reliable and professional accounting services with integrity, 
-              excellence, and confidentiality since 2008.
+              A group of professionals with a strong background in accounting, consultancy, 
+              tax and service management, providing reliable services with integrity, excellence 
+              and confidentiality.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* About Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-gray-900">Our Story</h2>
+              <h2 className="text-4xl font-bold text-gray-900">About the Firm</h2>
               <p className="text-gray-600 leading-relaxed">
-                Founded in 2008, Abdullah Shahid & Co. has grown to become one of Pakistan&apos;s 
-                most trusted chartered accountancy firms. With over 15 years of experience, 
-                we&apos;ve built our reputation on delivering exceptional financial services to 
-                businesses of all sizes.
+                Abdullah Shahid & Co. Chartered Accountants is a group of professionals with 
+                a strong background in accounting, consultancy, tax and service management. 
+                The firm provides reliable and professional services with integrity, excellence 
+                and confidentiality to meet clients&apos; individual requirements.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Our team of ICAP-certified professionals brings together expertise in taxation, 
-                auditing, financial advisory, and business consulting. We pride ourselves on 
-                understanding each client&lsquo;s unique needs and providing tailored solutions that 
-                drive growth and compliance.
+                We bring in-depth knowledge, as well as the technical expertise you are looking 
+                for in a professional services firm. We understand your needs to provide a tailored 
+                solution that meets with your requirements and garners consent of all stakeholders 
+                involved.
               </p>
-              <div className="grid grid-cols-2 gap-4 pt-6">
-                <div className="bg-yellow-400/10 rounded-lg p-6 border border-yellow-400/20">
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">500+</div>
-                  <div className="text-gray-600">Happy Clients</div>
-                </div>
-                <div className="bg-yellow-400/10 rounded-lg p-6 border border-yellow-400/20">
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">15+</div>
-                  <div className="text-gray-600">Years Experience</div>
-                </div>
-              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Our platform allows us to objectively serve as our clients&apos; advocate; the only 
+                advice and solutions we offer are those that are in the best interest of our client.
+              </p>
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-3xl rotate-3" />
               <div className="relative bg-gradient-to-br from-yellow-400/5 to-yellow-400/20 rounded-3xl p-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1554224311-beee460ae6fb?w=800&h=600&fit=crop" 
-                  alt="Office" 
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" 
+                  alt="Professional accounting office workspace" 
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
               </div>
@@ -116,75 +111,94 @@ export default function AboutUs() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
             <p className="text-gray-600">
               The principles that guide our work and relationships with clients
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-yellow-400" />
+                <Eye className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Integrity</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Transparency</h3>
               <p className="text-gray-600">
-                We uphold the highest ethical standards and maintain complete transparency 
-                in all our dealings.
+                We value open communication, information sharing and inclusive decision making.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-yellow-400" />
+                <Shield className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Excellence</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Independence</h3>
               <p className="text-gray-600">
-                We strive for perfection in every service we deliver, continuously improving 
-                our skills and knowledge.
+                We maintain professional independence to provide objective advice and solutions.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Client Focus</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Stewardship</h3>
               <p className="text-gray-600">
-                Your success is our priority. We build lasting relationships based on trust 
-                and exceptional service.
+                We hire the best and brightest and invest in our people to ensure the legacy.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-yellow-400/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-yellow-400" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Best-in-class</h3>
+              <p className="text-gray-600">
+                We aim to be the benchmark for quality and the standard by which other firms are measured.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Certifications & Awards */}
+      {/* Team Section */}
       <section className="py-20 bg-gradient-to-br from-yellow-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Certifications & Recognition</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
             <p className="text-gray-600">
-              Our commitment to excellence has been recognized by leading industry bodies
+              Led by experienced professionals with extensive backgrounds in accounting and finance
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-yellow-400/20 text-center">
-              <CheckCircle className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">ICAP Certified</h3>
-              <p className="text-sm text-gray-600">
-                Institute of Chartered Accountants of Pakistan
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-400/20">
+              <div className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <span className="text-3xl font-bold text-black">AS</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Abdullah Shahid</h3>
+              <p className="text-yellow-400 font-semibold mb-4 text-center">Partner</p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Associate member of the Institute of Chartered Accountants of Pakistan. Abdullah 
+                spent 5 years working for KPMG in Pakistan in their assurance, tax and advisory 
+                line of service.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                He leads assignments and pays close attention to the quality of services being 
+                delivered. His expertise in various areas is leveraged by his team to ensure 
+                that the most efficient and effective strategies are proposed.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-yellow-400/20 text-center">
-              <CheckCircle className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">ISO 9001:2015</h3>
-              <p className="text-sm text-gray-600">
-                Quality Management System Certified
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-400/20">
+              <div className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <span className="text-3xl font-bold text-black">ZT</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">M. Zohair Tahir</h3>
+              <p className="text-yellow-400 font-semibold mb-4 text-center">Partner</p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Member of Association of Chartered Certified Accountants. During a career span 
+                of 6 years, he has worked with A.F Ferguson & Co. as tax consultant before moving 
+                to KPMG in their assurance department.
               </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-yellow-400/20 text-center">
-              <CheckCircle className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Tax Excellence 2023</h3>
-              <p className="text-sm text-gray-600">
-                Recognized for Outstanding Tax Advisory
+              <p className="text-gray-600 leading-relaxed">
+                A finance professional with extensive consultancy and management experience. He 
+                led and executed external audits, buy side due diligence, risk advisory and tax 
+                services for a diverse portfolio of clients.
               </p>
             </div>
           </div>
@@ -198,10 +212,10 @@ export default function AboutUs() {
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Let&apos;s discuss how we can help your business achieve its financial goals
           </p>
-                            <Link href='tel:+92-333-7954767'>
-          <button className="bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
-            Schedule a Consultation
-          </button>
+          <Link href='/contactus'>
+            <button className="bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
+              Get In Touch
+            </button>
           </Link>
         </div>
       </section>

@@ -137,12 +137,46 @@ export default function BlogPage() {
         </div>
       </section>
 
+        {/* Services Overview */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full mb-6">
+                <span className="text-yellow-400 text-sm font-medium">What We Offer</span>
+              </div>
+              <h2 className="text-4xl font-bold text-foreground mb-4">Our Core Services</h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Comprehensive accounting and financial services tailored to your needs
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-card border border-border rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-6 h-6 bg-yellow-400/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-yellow-400 transition-colors">
+                      <CheckCircle2 className="w-4 h-4 text-yellow-400 group-hover:text-black transition-colors" />
+                    </div>
+                    <p className="text-gray-700 font-medium group-hover:text-yellow-400 transition-colors">
+                      {service}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blog Posts Grid */}
       <section className="py-16 bg-gradient-to-b from-background to-gray-50/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full mb-6">
-              <span className="text-yellow-400 text-sm font-medium">Our Services</span>
+              <span className="text-yellow-400 text-2xl font-medium">Our Services</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Comprehensive Financial Services
@@ -192,39 +226,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-block px-4 py-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full mb-6">
-                <span className="text-yellow-400 text-sm font-medium">What We Offer</span>
-              </div>
-              <h2 className="text-4xl font-bold text-foreground mb-4">Our Core Services</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Comprehensive accounting and financial services tailored to your needs
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-card border border-border rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 group"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-6 h-6 bg-yellow-400/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-yellow-400 transition-colors">
-                      <CheckCircle2 className="w-4 h-4 text-yellow-400 group-hover:text-black transition-colors" />
-                    </div>
-                    <p className="text-gray-700 font-medium group-hover:text-yellow-400 transition-colors">
-                      {service}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
       {/* Why Choose Us */}
       <section className="py-16 bg-gradient-to-b from-gray-50/50 to-background">

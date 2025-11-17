@@ -129,12 +129,12 @@ export function Hero() {
 
                   <div className="grid grid-cols-2 gap-4 mt-8">
                     <div className="bg-yellow-400/10 rounded-lg p-4 border border-yellow-400/20">
-                      <div className="text-3xl font-bold text-yellow-400 mb-1">98%</div>
+                      <div className="text-3xl font-bold text-yellow-400 mb-1">100%</div>
                       <div className="text-sm text-gray-600">Client Satisfaction</div>
                     </div>
                     <div className="bg-yellow-400/10 rounded-lg p-4 border border-yellow-400/20">
-                      <div className="text-3xl font-bold text-yellow-400 mb-1">24/7</div>
-                      <div className="text-sm text-gray-600">Support Available</div>
+                      <div className="text-3xl font-bold text-yellow-400 mb-1">10+</div>
+                      <div className="text-sm text-gray-600">Years of Experience</div>
                     </div>
                   </div>
                 </div>

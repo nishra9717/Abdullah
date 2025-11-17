@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Mail, Phone, MapPin, MessageCircle, Clock, Users, Award, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Clock, Users, Award, Sparkles, Building2 } from 'lucide-react';
 
 export default function ContactUs() {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,8 +20,8 @@ export default function ContactUs() {
     window.location.href = 'mailto:info@theasco.com?subject=Service Inquiry';
   };
 
-  const handleCall = () => {
-    window.location.href = 'tel:+923337954767';
+  const handleCall = (number: string) => {
+    window.location.href = `tel:${number}`;
   };
 
   return (
@@ -134,34 +134,45 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Phone Call Card */}
+            {/* Phone Numbers Card */}
             <div
               className={`transition-all duration-700 delay-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <button
-                onClick={handleCall}
-                className="w-full bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white rounded-3xl p-8 shadow-2xl transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                
-                <div className="relative flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <Phone className="w-8 h-8 text-black" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="text-2xl font-bold mb-2">Call Us Directly</h3>
-                      <p className="text-gray-300 text-lg">+92-333-7954767</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-yellow-400 font-semibold text-sm">Available</p>
-                    <p className="text-gray-400 text-sm">Mon-Fri: 9AM-6PM</p>
-                  </div>
+              <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-3xl p-8 shadow-2xl">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                  <Phone className="w-8 h-8 text-yellow-400" />
+                  Call Our Office
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <button
+                    onClick={() => handleCall('+923337954767')}
+                    className="bg-gray-700/50 hover:bg-gray-700 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group"
+                  >
+                    <p className="text-yellow-400 font-semibold mb-2 text-sm">Whatsapp</p>
+                    <p className="text-xl font-bold group-hover:text-yellow-400 transition-colors">+92-333-7954767</p>
+                  </button>
+                  <button
+                    onClick={() => handleCall('05242620671')}
+                    className="bg-gray-700/50 hover:bg-gray-700 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group"
+                  >
+                    <p className="text-yellow-400 font-semibold mb-2 text-sm">Office Phone </p>
+                    <p className="text-xl font-bold group-hover:text-yellow-400 transition-colors">052-4262067</p>
+                  </button>
+                  <button
+                    onClick={() => handleCall('05242620682')}
+                    className="bg-gray-700/50 hover:bg-gray-700 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group"
+                  >
+                    <p className="text-yellow-400 font-semibold mb-2 text-sm">Office Phone</p>
+                    <p className="text-xl font-bold group-hover:text-yellow-400 transition-colors">052-4262068</p>
+                  </button>
                 </div>
-              </button>
+                <div className="mt-6 flex items-center gap-2 text-gray-400 text-sm">
+                  <Clock className="w-4 h-4" />
+                  <span>Available Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -231,46 +242,89 @@ export default function ContactUs() {
         </div>
       </section>
 
-      {/* Office Information */}
+      {/* Office Locations */}
       <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-10 shadow-xl border border-gray-100">
-              <div className="grid md:grid-cols-2 gap-10">
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                    <MapPin className="w-8 h-8 text-yellow-400" />
-                    Visit Our Office
-                  </h3>
-                  <div className="space-y-4 text-gray-600">
-                    <p className="text-lg leading-relaxed">
-                      <strong className="text-gray-900">Abdullah Shahid & Co.</strong><br />
-                      Chartered Accountants<br />
-                      Rawalpindi, Punjab<br />
-                      Pakistan
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Visit Our Offices
+              </h2>
+              <p className="text-xl text-gray-600">
+                We have multiple locations to serve you better
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Sialkot Office */}
+              <div className="bg-gradient-to-br from-yellow-50 to-white rounded-3xl p-8 shadow-xl border border-yellow-200 hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6">
+                  <Building2 className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Sialkot Office</h3>
+                <div className="space-y-4 text-gray-600">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
+                    <p className="leading-relaxed">
+                      City Mall Plaza Office No. 8, 13 & 14,<br />
+                      2nd Floor, Kachehri Road,<br />
+                      Sialkot, Pakistan. 51310
                     </p>
                   </div>
-                </div>
-
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                    <Clock className="w-8 h-8 text-yellow-400" />
-                    Office Hours
-                  </h3>
-                  <div className="space-y-3 text-gray-600">
-                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="font-semibold text-gray-900">Monday - Friday</span>
-                      <span className="text-gray-700">9:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="font-semibold text-gray-900">Saturday</span>
-                      <span className="text-gray-700">10:00 AM - 2:00 PM</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span className="font-semibold text-gray-900">Sunday</span>
-                      <span className="text-red-600 font-semibold">Closed</span>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold text-gray-900">052-4262067</p>
+                      <p className="font-semibold text-gray-900">052-4262068</p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Islamabad Office */}
+              <div className="bg-gradient-to-br from-yellow-50 to-white rounded-3xl p-8 shadow-xl border border-yellow-200 hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6">
+                  <Building2 className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Islamabad Office</h3>
+                <div className="space-y-4 text-gray-600">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
+                    <p className="leading-relaxed">
+                      13 Street 3A, Sector D<br />
+                      DHA Phase II,<br />
+                      Islamabad, Pakistan
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                   <div>
+                      <p className="font-semibold text-gray-900">052-4262067</p>
+                      <p className="font-semibold text-gray-900">052-4262068</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Office Hours */}
+            <div className="mt-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-xl border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Clock className="w-8 h-8 text-yellow-400" />
+                Office Hours
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
+                  <p className="font-bold text-gray-900 mb-2">Monday - Friday</p>
+                  <p className="text-yellow-400 font-semibold text-lg">9:00 AM - 6:00 PM</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
+                  <p className="font-bold text-gray-900 mb-2">Saturday</p>
+                  <p className="text-yellow-400 font-semibold text-lg">10:00 AM - 2:00 PM</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
+                  <p className="font-bold text-gray-900 mb-2">Sunday</p>
+                  <p className="text-red-600 font-semibold text-lg">Closed</p>
                 </div>
               </div>
             </div>
