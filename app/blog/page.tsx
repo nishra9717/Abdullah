@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Header } from '@/components/homepage/header';
-import { Footer } from '@/components/homepage/footer';
 import { Button } from '@/components/ui/button';
 import { blogPosts } from '@/lib/blogData';
 import { 
@@ -53,7 +51,6 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-background pt-20 pb-16">
@@ -112,7 +109,7 @@ export default function BlogPage() {
                     size="lg"
                     className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group"
                   >
-                    <Link href="/#about">
+                    <Link href="/aboutus">
                       Learn More About Us
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -283,7 +280,7 @@ export default function BlogPage() {
                     </div>
                     <div>
                       <p className="font-semibold">Phone</p>
-                      <p className="text-gray-600">+92-XXX-XXXXXXX</p>
+                      <p className="text-gray-600">+92-333-7954767</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 text-gray-700">
@@ -292,7 +289,7 @@ export default function BlogPage() {
                     </div>
                     <div>
                       <p className="font-semibold">Email</p>
-                      <p className="text-gray-600">info@asca.com</p>
+                      <p className="text-gray-600">info@theasco.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 text-gray-700">
@@ -311,7 +308,7 @@ export default function BlogPage() {
                     size="lg"
                     className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group w-full sm:w-auto"
                   >
-                    <Link href="/#contact">
+                  <Link href='tel:+92-333-7954767'>
                       Schedule Consultation
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -340,7 +337,7 @@ export default function BlogPage() {
                 size="lg"
                 className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group"
               >
-                <Link href="/#contact">
+                <Link href="/contactus">
                   Contact Us
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -351,14 +348,13 @@ export default function BlogPage() {
                 variant="outline"
                 className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
               >
-                <Link href="/#services">View All Services</Link>
+                <Link href="/blog">View All Services</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

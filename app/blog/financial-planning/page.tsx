@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Header } from '@/components/homepage/header';
-import { Footer } from '@/components/homepage/footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Target, TrendingUp, CheckCircle2, Shield, Users, PieChart, DollarSign, BarChart3, AlertCircle, Calendar } from 'lucide-react';
 
@@ -39,7 +37,6 @@ export default function FinancialPlanning() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-background pt-20 pb-16">
@@ -78,7 +75,7 @@ export default function FinancialPlanning() {
                 <p className="text-lg">
                   Financial planning is the cornerstone of long-term financial success. It involves creating a comprehensive 
                   roadmap that helps you manage your finances effectively, achieve your goals, and build wealth over time. 
-                  Whether you're planning for retirement, saving for a major purchase, or growing your business, strategic 
+                  Whether you&apos;re planning for retirement, saving for a major purchase, or growing your business, strategic 
                   financial planning provides the foundation for sound financial decisions.
                 </p>
                 <p>
@@ -283,7 +280,7 @@ export default function FinancialPlanning() {
                 size="lg"
                 className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group"
               >
-                <Link href="/#contact">
+                  <Link href='tel:+92-333-7954767'>
                   Schedule Consultation
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -294,14 +291,13 @@ export default function FinancialPlanning() {
                 variant="outline"
                 className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
               >
-                <Link href="/#services">View All Services</Link>
+                <Link href="/blog">View All Services</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

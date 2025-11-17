@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
 
 const services = [
   {
@@ -125,9 +126,10 @@ export function Services() {
         </div>
 
         <div className="text-center mt-16">
-          <button className="px-8 py-4 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
+          <Link href='/blog'><button className="px-8 py-4 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
             View All Services
           </button>
+          </Link>
         </div>
       </div>
     </section>

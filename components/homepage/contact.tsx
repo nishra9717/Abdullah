@@ -35,7 +35,7 @@ export function Contact() {
             Get in Touch
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Visit our offices or send us a message. We're here to help with all your financial needs.
+            Visit our offices or send us a message. We&apos;re here to help with all your financial needs.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function Contact() {
           <CardHeader>
             <CardTitle className="text-2xl text-white text-center">Send Us a Message</CardTitle>
             <CardDescription className="text-center">
-              Fill out the form below and we'll get back to you as soon as possible
+              Fill out the form below and we&apos;ll get back to you as soon as possible
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Header } from '@/components/homepage/header';
-import { Footer } from '@/components/homepage/footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart3, TrendingUp, CheckCircle2, Shield, Users, PieChart, FileText, AlertCircle, Calculator } from 'lucide-react';
 
@@ -39,7 +37,6 @@ export default function FinancialAnalysis() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-background pt-20 pb-16">
@@ -85,10 +82,10 @@ export default function FinancialAnalysis() {
                   At Abdullah Shahid & Co., we perform comprehensive financial analyses that go beyond surface-level 
                   numbers. Our experienced analysts use advanced techniques and industry benchmarks to provide deep 
                   insights into your financial position. We examine profitability, liquidity, solvency, and efficiency 
-                  metrics to give you a complete picture of your business's financial performance.
+                  metrics to give you a complete picture of your business&apos;s financial performance.
                 </p>
                 <p>
-                  Our financial analysis services help you understand not just where you are, but where you're heading. 
+                  Our financial analysis services help you understand not just where you are, but where you&apos;re heading. 
                   We identify trends, patterns, and potential issues before they become problems, enabling proactive 
                   management and strategic planning. Whether you need analysis for internal decision-making, investor 
                   presentations, or compliance purposes, we deliver detailed, accurate, and actionable insights.
@@ -283,7 +280,7 @@ export default function FinancialAnalysis() {
                 size="lg"
                 className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group"
               >
-                <Link href="/#contact">
+                  <Link href='tel:+92-333-7954767'>
                   Schedule Consultation
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -294,14 +291,13 @@ export default function FinancialAnalysis() {
                 variant="outline"
                 className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
               >
-                <Link href="/#services">View All Services</Link>
+                <Link href="/blog">View All Services</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

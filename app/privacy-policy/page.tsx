@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Shield, Lock, Eye, FileText, Users, Bell } from 'lucide-react';
+import Link from 'next/link';
 
 export default function PrivacyPolicy() {
   const [isVisible, setIsVisible] = useState(false);
@@ -273,8 +274,8 @@ export default function PrivacyPolicy() {
                     </p>
                     <div className="bg-yellow-400/5 rounded-lg p-6 border border-yellow-400/20 mt-4">
                       <p className="font-semibold text-gray-900 mb-2">Abdullah Shahid & Co. Chartered Accountants</p>
-                      <p>Email: info@abdullahshahid.com</p>
-                      <p>Phone: +92 XXX XXXXXXX</p>
+                      <p>Email: info@theasco.com</p>
+                      <p>Phone: +92-333-7954767</p>
                       <p>Address: Rawalpindi, Punjab, Pakistan</p>
                     </div>
                   </div>
@@ -293,9 +294,11 @@ export default function PrivacyPolicy() {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             We&apos;re here to help. Contact our team for any privacy-related inquiries.
           </p>
+         <Link href='/contactus'>
           <button className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
             Contact Us
           </button>
+          </Link>
         </div>
       </section>
     </div>

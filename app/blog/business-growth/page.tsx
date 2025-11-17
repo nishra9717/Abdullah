@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Header } from '@/components/homepage/header';
-import { Footer } from '@/components/homepage/footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Rocket, TrendingUp, CheckCircle2, Shield, Users, Target, Lightbulb, AlertCircle, BarChart3 } from 'lucide-react';
 
@@ -39,7 +37,6 @@ export default function BusinessGrowth() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-background pt-20 pb-16">
@@ -76,10 +73,10 @@ export default function BusinessGrowth() {
               <h2 className="text-3xl font-bold text-foreground mb-6">The Path to Sustainable Business Growth</h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p className="text-lg">
-                  Business growth is not just about increasing revenue—it's about building a sustainable, scalable 
+                  Business growth is not just about increasing revenue—it&apos;s about building a sustainable, scalable 
                   organization that can thrive in competitive markets. Successful growth requires strategic planning, 
                   market insight, operational excellence, and the ability to adapt to changing conditions. Whether 
-                  you're a startup looking to scale or an established business seeking expansion, growth requires 
+                  you&apos;re a startup looking to scale or an established business seeking expansion, growth requires 
                   careful planning and expert guidance.
                 </p>
                 <p>
@@ -279,13 +276,13 @@ export default function BusinessGrowth() {
               Partner with us to develop and implement growth strategies that drive sustainable 
               expansion. Contact us today to schedule a consultation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
                 className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group"
               >
-                <Link href="/#contact">
+                  <Link href='tel:+92-333-7954767'>
                   Schedule Consultation
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -296,14 +293,13 @@ export default function BusinessGrowth() {
                 variant="outline"
                 className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
               >
-                <Link href="/#services">View All Services</Link>
+                <Link href="/blog">View All Services</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

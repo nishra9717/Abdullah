@@ -1,373 +1,312 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Clock, Users, Award, Sparkles } from 'lucide-react';
 
 export default function ContactUs() {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  const [status, setStatus] = useState({ type: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setStatus({ type: '', message: '' });
-
-    try {
-      // EmailJS configuration - reads from environment variables
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error('EmailJS configuration is missing. Please check your .env file.');
-      }
-
-      const emailjs = (await import('@emailjs/browser')).default;
-
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: 'Abdullah Shahid & Co.'
-      };
-
-      await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-
-      setStatus({
-        type: 'success',
-        message: 'Thank you! Your message has been sent successfully. We will get back to you soon.'
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: 'Sorry, something went wrong. Please try again or contact us directly via email or WhatsApp.'
-      });
-      console.error('EmailJS Error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   const handleWhatsApp = () => {
-    const phone = '923001234567'; // Replace with actual WhatsApp number
-    const message = encodeURIComponent('Hello, I would like to inquire about your services.');
+    const phone = '923337954767';
+    const message = encodeURIComponent('Hello! I would like to inquire about your services.');
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
 
   const handleEmailDirect = () => {
-    window.location.href = 'mailto:info@abdullahshahid.com?subject=Service Inquiry';
+    window.location.href = 'mailto:info@theasco.com?subject=Service Inquiry';
+  };
+
+  const handleCall = () => {
+    window.location.href = 'tel:+923337954767';
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-yellow-50/30">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 -left-40 w-96 h-96 bg-yellow-300/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute bottom-0 right-1/3 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl animate-pulse delay-500" />
+      </div>
+
       {/* Header Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-transparent" />
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/20 rounded-full blur-3xl" />
-        
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div
             className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <div className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Mail className="w-10 h-10 text-black" />
+            <div className="relative inline-block mb-6">
+              <div className="absolute inset-0 bg-yellow-400 rounded-3xl blur-xl opacity-50 animate-pulse" />
+              <div className="relative w-24 h-24 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-3xl flex items-center justify-center shadow-2xl">
+                <MessageCircle className="w-12 h-12 text-black" />
+              </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Get In Touch
+            
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              Let&apos;s Start a
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> Conversation</span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-4">
+              We&apos;re here to help you achieve your business goals
+            </p>
+            <p className="text-lg text-gray-500">
+              Choose your preferred way to connect with us instantly
             </p>
           </div>
         </div>
       </section>
 
-      {/* Quick Contact Buttons */}
-      <section className="py-12 bg-gradient-to-br from-yellow-50 to-white">
+      {/* Main Contact Cards */}
+      <section className="py-12 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {/* WhatsApp Card */}
+              <div
+                className={`group transition-all duration-700 delay-100 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+              >
+                <button
+                  onClick={handleWhatsApp}
+                  className="w-full bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-green-500/50 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-6">
+                      <MessageCircle className="w-14 h-14 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
+                      <Sparkles className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    
+                    <h3 className="text-3xl font-bold mb-3 text-left">WhatsApp</h3>
+                    <p className="text-green-50 text-lg mb-4 text-left">Chat with us instantly for quick responses</p>
+                    
+                    <div className="bg-green-600/50 rounded-2xl p-4 mb-4">
+                      <p className="text-white font-semibold text-lg">+92-333-7954767</p>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-green-100 text-sm">
+                      <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
+                      <span>Usually responds within minutes</span>
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              {/* Email Card */}
+              <div
+                className={`group transition-all duration-700 delay-200 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+              >
+                <button
+                  onClick={handleEmailDirect}
+                  className="w-full bg-gradient-to-br from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/50 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-6">
+                      <Mail className="w-14 h-14 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
+                      <Sparkles className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    
+                    <h3 className="text-3xl font-bold mb-3 text-left">Email Us</h3>
+                    <p className="text-gray-800 text-lg mb-4 text-left">Send detailed inquiries and documents</p>
+                    
+                    <div className="bg-yellow-500/50 rounded-2xl p-4 mb-4">
+                      <p className="text-black font-semibold text-lg">info@theasco.com</p>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-gray-800 text-sm">
+                      <Clock className="w-4 h-4" />
+                      <span>We&apos;ll respond within 24 hours</span>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            {/* Phone Call Card */}
+            <div
+              className={`transition-all duration-700 delay-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+            >
+              <button
+                onClick={handleCall}
+                className="w-full bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white rounded-3xl p-8 shadow-2xl transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                
+                <div className="relative flex items-center justify-between">
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                      <Phone className="w-8 h-8 text-black" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-2xl font-bold mb-2">Call Us Directly</h3>
+                      <p className="text-gray-300 text-lg">+92-333-7954767</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-yellow-400 font-semibold text-sm">Available</p>
+                    <p className="text-gray-400 text-sm">Mon-Fri: 9AM-6PM</p>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div
+              className={`text-center mb-16 transition-all duration-1000 delay-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Why Connect With Us?
+              </h2>
+              <p className="text-xl text-gray-600">
+                Experience professional service that puts your needs first
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Users,
+                  title: 'Expert Team',
+                  description: 'Dedicated professionals with years of experience in accounting and financial services',
+                  color: 'from-blue-500 to-blue-600',
+                  delay: 'delay-400'
+                },
+                {
+                  icon: Award,
+                  title: 'Trusted Service',
+                  description: 'Certified chartered accountants delivering reliable and accurate solutions',
+                  color: 'from-yellow-400 to-yellow-500',
+                  delay: 'delay-500'
+                },
+                {
+                  icon: Clock,
+                  title: 'Quick Response',
+                  description: 'Fast turnaround times and prompt communication for all your queries',
+                  color: 'from-green-500 to-green-600',
+                  delay: 'delay-600'
+                }
+              ].map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <div
+                    key={index}
+                    className={`transition-all duration-1000 ${feature.delay} ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
+                  >
+                    <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 group h-full">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300`}>
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Office Information */}
+      <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6">
-              <button
-                onClick={handleWhatsApp}
-                className="bg-green-500 hover:bg-green-600 text-white rounded-2xl p-8 shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-4 group"
-              >
-                <MessageCircle className="w-8 h-8 group-hover:rotate-12 transition-transform" />
-                <div className="text-left">
-                  <h3 className="text-2xl font-bold mb-1">WhatsApp</h3>
-                  <p className="text-green-100">Chat with us instantly</p>
-                </div>
-              </button>
-              <button
-                onClick={handleEmailDirect}
-                className="bg-yellow-400 hover:bg-yellow-500 text-black rounded-2xl p-8 shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-4 group"
-              >
-                <Mail className="w-8 h-8 group-hover:rotate-12 transition-transform" />
-                <div className="text-left">
-                  <h3 className="text-2xl font-bold mb-1">Email Us</h3>
-                  <p className="text-gray-700">info@abdullahshahid.com</p>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12">
-              
-              {/* Contact Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-400/20">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                
-                {status.message && (
-                  <div className={`mb-6 p-4 rounded-lg flex items-start gap-3 ${
-                    status.type === 'success' 
-                      ? 'bg-green-50 border border-green-200' 
-                      : 'bg-red-50 border border-red-200'
-                  }`}>
-                    {status.type === 'success' ? (
-                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    ) : (
-                      <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                    )}
-                    <p className={status.type === 'success' ? 'text-green-800' : 'text-red-800'}>
-                      {status.message}
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-10 shadow-xl border border-gray-100">
+              <div className="grid md:grid-cols-2 gap-10">
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <MapPin className="w-8 h-8 text-yellow-400" />
+                    Visit Our Office
+                  </h3>
+                  <div className="space-y-4 text-gray-600">
+                    <p className="text-lg leading-relaxed">
+                      <strong className="text-gray-900">Abdullah Shahid & Co.</strong><br />
+                      Chartered Accountants<br />
+                      Rawalpindi, Punjab<br />
+                      Pakistan
                     </p>
                   </div>
-                )}
-
-                <div className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all"
-                      placeholder="John Doe"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all"
-                      placeholder="+92 XXX XXXXXXX"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all"
-                      placeholder="Service Inquiry"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all resize-none"
-                      placeholder="Tell us about your needs..."
-                    />
-                  </div>
-
-                  <button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting}
-                    className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-4 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5" />
-                        Send Message
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {/* Contact Information */}
-              <div className="space-y-8">
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-400/20">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-6 h-6 text-yellow-400" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                        <p className="text-gray-600">+92 XXX XXXXXXX</p>
-                        <p className="text-gray-600">+92 XXX XXXXXXX</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-6 h-6 text-yellow-400" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                        <p className="text-gray-600">info@abdullahshahid.com</p>
-                        <p className="text-gray-600">support@abdullahshahid.com</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-6 h-6 text-yellow-400" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Office Address</h3>
-                        <p className="text-gray-600">
-                          Abdullah Shahid & Co.<br />
-                          Chartered Accountants<br />
-                          Rawalpindi, Punjab<br />
-                          Pakistan
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-400/20">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Office Hours</h3>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <Clock className="w-8 h-8 text-yellow-400" />
+                    Office Hours
+                  </h3>
                   <div className="space-y-3 text-gray-600">
-                    <div className="flex justify-between">
-                      <span className="font-semibold">Monday - Friday</span>
-                      <span>9:00 AM - 6:00 PM</span>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                      <span className="font-semibold text-gray-900">Monday - Friday</span>
+                      <span className="text-gray-700">9:00 AM - 6:00 PM</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="font-semibold">Saturday</span>
-                      <span>10:00 AM - 2:00 PM</span>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                      <span className="font-semibold text-gray-900">Saturday</span>
+                      <span className="text-gray-700">10:00 AM - 2:00 PM</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="font-semibold">Sunday</span>
-                      <span>Closed</span>
+                    <div className="flex justify-between items-center py-2">
+                      <span className="font-semibold text-gray-900">Sunday</span>
+                      <span className="text-red-600 font-semibold">Closed</span>
                     </div>
                   </div>
                 </div>
-
-                <div className="bg-gradient-to-br from-yellow-400/10 to-yellow-400/5 rounded-2xl p-8 border border-yellow-400/20">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Need Immediate Assistance?</h3>
-                  <p className="text-gray-600 mb-4">
-                    For urgent matters, please contact us via WhatsApp or call our office directly.
-                  </p>
-                  <button
-                    onClick={handleWhatsApp}
-                    className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    WhatsApp Now
-                  </button>
-                </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 bg-white">
+      {/* CTA Section */}
+      <section className="py-20 relative z-10">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-gray-200 rounded-2xl overflow-hidden h-96 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
-                <p className="text-gray-600 text-lg">Map will be displayed here</p>
-                <p className="text-gray-500 text-sm mt-2">Rawalpindi, Punjab, Pakistan</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-3xl p-12 shadow-2xl text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-black/5 backdrop-blur-sm" />
+              <div className="relative z-10">
+                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                  Ready to Get Started?
+                </h2>
+                <p className="text-xl text-gray-900 mb-8 max-w-2xl mx-auto">
+                  Don&apos;t hesitate to reach out. We&apos;re excited to hear from you and help with your financial needs.
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <button
+                    onClick={handleWhatsApp}
+                    className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-110 shadow-lg flex items-center gap-3"
+                  >
+                    <MessageCircle className="w-6 h-6" />
+                    WhatsApp Now
+                  </button>
+                  <button
+                    onClick={handleEmailDirect}
+                    className="bg-black hover:bg-gray-900 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-110 shadow-lg flex items-center gap-3"
+                  >
+                    <Mail className="w-6 h-6" />
+                    Send Email
+                  </button>
+                </div>
               </div>
             </div>
           </div>

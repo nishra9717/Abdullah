@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { TrendingUp, Shield, Users, Award, Target, Eye, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutUs() {
   const [isVisible, setIsVisible] = useState(false);
@@ -197,9 +198,11 @@ export default function AboutUs() {
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Let&apos;s discuss how we can help your business achieve its financial goals
           </p>
+                            <Link href='tel:+92-333-7954767'>
           <button className="bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
             Schedule a Consultation
           </button>
+          </Link>
         </div>
       </section>
     </div>

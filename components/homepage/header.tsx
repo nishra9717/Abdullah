@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,11 +19,10 @@ export function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Services', href: '#services' },
-    { label: 'About', href: '#about' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/blog' },
+    { label: 'About', href: '/aboutus' },
+    { label: 'Contact', href: '/contactus' },
   ];
 
   return (
@@ -32,17 +33,15 @@ export function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-xl">AS</span>
-            </div>
-            <div>
-              <h1 className="text-yellow-400 font-bold text-lg leading-tight">
-                Abdullah Shahid & Co.
-              </h1>
-              <p className="text-gray-400 text-xs">Chartered Accountants</p>
-            </div>
-          </div>
+          <Link href="/" className="flex items-center space-x-2">
+             <Image src="/logo.png" alt="logo" width={48} height={30} />
+              <div>
+                <h3 className="text-yellow-400 font-bold text-lg leading-tight">
+                  Abdullah Shahid & Co.
+                </h3>
+                <p className="text-gray-400 text-xs">Chartered Accountants</p>
+              </div>
+            </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -57,15 +56,16 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+92" className="text-gray-700 hover:text-yellow-400 transition-colors">
+            <a href="tel:+92-333-7954767" className="text-gray-700 hover:text-yellow-400 transition-colors">
               <Phone className="w-5 h-5" />
             </a>
-            <a href="mailto:info@asca.com" className="text-gray-700 hover:text-yellow-400 transition-colors">
+            <a href="mailto:info@theasco.com" className="text-gray-700 hover:text-yellow-400 transition-colors">
               <Mail className="w-5 h-5" />
             </a>
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300">
+           <Link href="/contactus" className="text-yellow-400"> <Button className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300">
               Get Started
             </Button>
+            </Link>
           </div>
 
           <button

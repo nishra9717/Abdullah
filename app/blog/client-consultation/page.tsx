@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Header } from '@/components/homepage/header';
-import { Footer } from '@/components/homepage/footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, MessageCircle, CheckCircle2, Shield, Users, Clock, Heart, AlertCircle, Phone, Mail } from 'lucide-react';
 
@@ -39,7 +37,6 @@ export default function ClientConsultation() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-background pt-20 pb-16">
@@ -76,14 +73,14 @@ export default function ClientConsultation() {
               <h2 className="text-3xl font-bold text-foreground mb-6">Your Financial Partner</h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p className="text-lg">
-                  Every individual and business has unique financial circumstances, goals, and challenges. That's why 
+                  Every individual and business has unique financial circumstances, goals, and challenges. That&apos;s why 
                   personalized consultation is at the heart of our service approach. We believe that effective financial 
                   guidance must be tailored to your specific situation, taking into account your goals, risk tolerance, 
                   and unique circumstances.
                 </p>
                 <p>
                   At Abdullah Shahid & Co., our consultation services are designed to provide you with expert financial 
-                  guidance in a comfortable, confidential setting. Whether you're facing complex tax issues, planning for 
+                  guidance in a comfortable, confidential setting. Whether you&apos;re facing complex tax issues, planning for 
                   retirement, managing business finances, or navigating any other financial challenge, our experienced 
                   advisors are here to help.
                 </p>
@@ -250,7 +247,7 @@ export default function ClientConsultation() {
                     </p>
                     <p>
                       <strong className="text-foreground">List Your Questions:</strong> Prepare a list of questions or 
-                      concerns you'd like to discuss. This helps ensure we address all your important topics during the 
+                      concerns you&apos;d like to discuss. This helps ensure we address all your important topics during the 
                       consultation.
                     </p>
                     <p>
@@ -283,8 +280,8 @@ export default function ClientConsultation() {
                 size="lg"
                 className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group"
               >
-                <Link href="/#contact">
-                  Book a Consultation
+                  <Link href='tel:+92-333-7954767'>
+                  Schedule Consultation
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -294,14 +291,13 @@ export default function ClientConsultation() {
                 variant="outline"
                 className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
               >
-                <Link href="/#services">View All Services</Link>
+                <Link href="/blog">View All Services</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

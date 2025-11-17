@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, TrendingUp, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,13 +51,15 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
+              <Link href='tel:+92-333-7954767'><Button
                 size="lg"
                 className="bg-yellow-400 text-black hover:bg-yellow-500 transition-all duration-300 hover:scale-105 group"
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
+              </Link>
+             <Link href="/blog">
               <Button
                 size="lg"
                 variant="outline"
@@ -64,6 +67,7 @@ export function Hero() {
               >
                 View Services
               </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-3 gap-6 pt-8">

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { FileText, Scale, AlertCircle, CheckCircle, XCircle, Briefcase } from 'lucide-react';
+import Link from 'next/link';
 
 export default function TermsOfService() {
   const [isVisible, setIsVisible] = useState(false);
@@ -374,8 +375,8 @@ export default function TermsOfService() {
                     </p>
                     <div className="bg-yellow-400/5 rounded-lg p-6 border border-yellow-400/20 mt-4">
                       <p className="font-semibold text-gray-900 mb-2">Abdullah Shahid & Co. Chartered Accountants</p>
-                      <p>Email: info@abdullahshahid.com</p>
-                      <p>Phone: +92 XXX XXXXXXX</p>
+                      <p>Email: info@theasco.com</p>
+                      <p>Phone: +92-333-7954767</p>
                       <p>Address: Rawalpindi, Punjab, Pakistan</p>
                     </div>
                   </div>
@@ -394,9 +395,11 @@ export default function TermsOfService() {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Contact us today to discuss how we can help with your accounting needs.
           </p>
+                            <Link href='tel:+92-333-7954767'>
           <button className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 hover:scale-105">
             Schedule Consultation
           </button>
+          </Link>
         </div>
       </section>
     </div>
