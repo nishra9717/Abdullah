@@ -37,7 +37,7 @@ export default function BlogPage() {
     { icon: Users, value: '500+', label: 'Clients Served' },
     { icon: BookOpen, value: '15+', label: 'Years Experience' },
     { icon: Shield, value: '100%', label: 'Confidential' },
-    { icon: Target, value: '99%', label: 'Success Rate' },
+    { icon: Target, value: '100%', label: 'Client Satisfaction' },
   ];
 
   const services = [

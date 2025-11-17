@@ -79,7 +79,7 @@ export function About() {
                 <div className="bg-gradient-to-br from-yellow-400/20 to-transparent rounded-2xl p-8 backdrop-blur-sm border border-yellow-400/20">
                   <CheckCircle2 className="w-12 h-12 text-yellow-400 mb-4" />
                   <h3 className="text-3xl font-bold text-black mb-2">100%</h3>
-                  <p className="text-gray-400">Success Rate</p>
+                  <p className="text-gray-400">Client Satisfaction</p>
                 </div>
               </div>
               <div className="space-y-6">
