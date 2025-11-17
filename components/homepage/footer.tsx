@@ -9,12 +9,12 @@ export function Footer() {
 
   const footerLinks = {
     Services: [
-      { name: 'Internal & External Audit', href: '/blog/business-growth' },
-      { name: 'Bookkeeping Services', href: '/blog/client-consultation' },
-      { name: 'Tax Planning & Compliance', href: '/blog/financial-analysis' },
-      { name: 'Tax Controversy & Litigation', href: '/blog/financial-planning' },
-      { name: 'International Tax', href: '/blog/corporate-services' },
-      { name: 'Financial Consulting', href: '/blog/tax-documentation' },
+      { name: 'Business Growth', href: '/blog/business-growth' },
+      { name: 'Client Consultation', href: '/blog/client-consultation' },
+      { name: 'Financial Analysis', href: '/blog/financial-analysis' },
+      { name: 'Financial Planning', href: '/blog/financial-planning' },
+      { name: 'Corporate Services', href: '/blog/corporate-services' },
+      { name: 'Tax Documentation', href: '/blog/tax-documentation' },
     ],
     'Quick Links': [
       { name: 'About Us', href: '/aboutus' },
@@ -24,10 +24,11 @@ export function Footer() {
       { name: 'Terms of Service', href: '/terms-of-service' },
     ],
     Contact: [
-      { name: 'Islamabad Office', href: '/contact#islamabad' },
-      { name: 'Sialkot Office', href: '/contact#sialkot' },
-      { name: 'info@theasco.com', href: 'mailto:info@theasco.com' },
-      { name: '+92-333-7954767', href: 'tel:+923337954767' },
+      { name: 'Islamabad : 13 Street 3A, Sector D DHA Phase II, Islamabad, Pakistan.', href: '/contactus' },
+      { name: 'Sialkot : City Mall Plaza Office No. 8, 13 & 14, 2nd Floor, Kachehri Road, Sialkot, Pakistan. 51310', href: '/contactus' },
+      { name: 'Office PTCL Numbers', href: 'tel:052-4262067' },
+      { name: '052-4262067', href: 'tel:052-4262067' },
+      { name: '052-4262068', href: 'tel:052-4262068' },
     ],
   };
 
