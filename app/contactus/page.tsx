@@ -50,7 +50,7 @@ export default function ContactUs() {
             
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Let&apos;s Start a
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> Conversation</span>
+              <span className=""> Conversation</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-4">
               We&apos;re here to help you achieve your business goals
@@ -336,7 +336,7 @@ export default function ContactUs() {
       <section className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-3xl p-12 shadow-2xl text-center relative overflow-hidden">
+            <div className="bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 rounded-3xl p-12 shadow-2xl text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-black/5 backdrop-blur-sm" />
               <div className="relative z-10">
                 <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">

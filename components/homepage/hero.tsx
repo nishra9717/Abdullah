@@ -75,7 +75,7 @@ export function Hero() {
                 <div className="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <TrendingUp className="w-6 h-6 text-yellow-400" />
                 </div>
-                <p className="text-2xl font-bold text-foreground">15+</p>
+                <p className="text-2xl font-bold text-foreground"></p>
                 <p className="text-sm text-gray-600">Years Experience</p>
               </div>
               <div className="text-center">
