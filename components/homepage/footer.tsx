@@ -7,15 +7,8 @@ import Link from 'next/link';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
+  // Updated footerLinks with icons for better visual presentation in the Contact section
   const footerLinks = {
-    Services: [
-      { name: 'Business Growth', href: '/blog/business-growth' },
-      { name: 'Client Consultation', href: '/blog/client-consultation' },
-      { name: 'Financial Analysis', href: '/blog/financial-analysis' },
-      { name: 'Financial Planning', href: '/blog/financial-planning' },
-      { name: 'Corporate Services', href: '/blog/corporate-services' },
-      { name: 'Tax Documentation', href: '/blog/tax-documentation' },
-    ],
     'Quick Links': [
       { name: 'About Us', href: '/aboutus' },
       { name: 'Services', href: '/blog' },
@@ -24,11 +17,11 @@ export function Footer() {
       { name: 'Terms of Service', href: '/terms-of-service' },
     ],
     Contact: [
-      { name: 'Islamabad : 13 Street 3A, Sector D DHA Phase II, Islamabad, Pakistan.', href: '/contactus' },
-      { name: 'Sialkot : City Mall Plaza Office No. 8, 13 & 14, 2nd Floor, Kachehri Road, Sialkot, Pakistan. 51310', href: '/contactus' },
+      { name: 'Islamabad : 13 Street 3A, Sector D DHA Phase II, Islamabad, Pakistan.', href: '/contactus', icon: MapPin },
+      { name: 'Sialkot : City Mall Plaza Office No. 8, 13 & 14, 2nd Floor, Kachehri Road, Sialkot, Pakistan. 51310', href: '/contactus', icon: MapPin },
       { name: 'Office PTCL Numbers', href: 'tel:052-4262067' },
-      { name: '052-4262067', href: 'tel:052-4262067' },
-      { name: '052-4262068', href: 'tel:052-4262068' },
+      { name: '052-4262067', href: 'tel:052-4262067', icon: Phone },
+      { name: '052-4262068', href: 'tel:052-4262068', icon: Phone },
     ],
   };
 
@@ -42,21 +35,23 @@ export function Footer() {
   return (
     <footer className="bg-background border-t border-border">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          <div className="space-y-6">
+        
+        {/* Adjusted Grid Layout: Uses a 5-column grid (lg:grid-cols-5) on large screens.
+            Layout: [Logo (col-span-1)] [Quick Links (col-span-1)] [Spacer (col-span-1)] [Contact (col-span-2)]
+        */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          
+          {/* 1. Logo/Branding Column (Far Left) */}
+          <div className="space-y-6 lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
              <Image src="/logo.png" alt="logo" width={48} height={30} />
               <div>
-                <h3 className="text-yellow-400 font-bold text-lg leading-tight">
+                <h3 className="text-black font-bold text-lg leading-tight">
                   Abdullah Shahid & Co.
                 </h3>
                 <p className="text-gray-400 text-xs">Chartered Accountants</p>
               </div>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Professional accounting, audit, and tax consulting services with integrity,
-              excellence, and confidentiality.
-            </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
@@ -72,24 +67,63 @@ export function Footer() {
               ))}
             </div>
           </div>
+          
+          {/* 2. Quick Links Column */}
+          {Object.entries(footerLinks).map(([title, links]) => {
+            const isContact = title === 'Contact';
+            
+            // Render Quick Links
+            if (!isContact) {
+                return (
+                    <div key={title} className="lg:col-span-1">
+                        <h4 className="text-foreground font-semibold text-lg mb-6">{title}</h4>
+                        <ul className="space-y-3">
+                            {links.map((link, index) => (
+                            <li key={index}>
+                                <Link
+                                href={link.href}
+                                className="text-gray-600 hover:text-yellow-400 transition-colors duration-300 text-sm"
+                                >
+                                {link.name}
+                                </Link>
+                            </li>
+                            ))}
+                        </ul>
+                    </div>
+                );
+            }
+            return null; // Skip Contact for now
+          })}
 
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h4 className="text-foreground font-semibold text-lg mb-6">{title}</h4>
+          {/* 3. Spacer Column (Pushes Contact to the Right) */}
+          <div className="hidden lg:block lg:col-span-1">
+            {/* Empty column for spacing on large screens */}
+          </div>
+
+          {/* 4. Contact Column (Far Right, Takes 2 columns) */}
+          {footerLinks['Contact'] && (
+            <div key="Contact" className="lg:col-span-2">
+              <h4 className="text-foreground font-semibold text-lg mb-6">Contact</h4>
               <ul className="space-y-3">
-                {links.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-600 hover:text-yellow-400 transition-colors duration-300 text-sm"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
+                {footerLinks['Contact'].map((link, index) => {
+                    const IconComponent = link.icon; 
+                    return (
+                        <li key={index}>
+                            <Link
+                                href={link.href}
+                                // Added flex items-start and space-x-2 for icon alignment
+                                className="text-gray-600 hover:text-yellow-400 transition-colors duration-300 text-sm flex items-start space-x-2"
+                            >
+                                {/* Conditionally render icon for Contact links */}
+                                {IconComponent && <IconComponent className="w-4 h-4 mt-0.5 text-gray-400 shrink-0" />}
+                                <span>{link.name}</span>
+                            </Link>
+                        </li>
+                    );
+                })}
               </ul>
             </div>
-          ))}
+          )}
         </div>
 
         <div className="border-t border-border pt-8">

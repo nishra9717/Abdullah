@@ -180,7 +180,7 @@ export default function TaxDocumentation() {
                     <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                       <TrendingUp className="w-8 h-8 text-black" />
                     </div>
-                    <div className="text-3xl font-bold text-foreground mb-2">15+</div>
+                    <div className="text-3xl font-bold text-foreground mb-2">10+</div>
                     <div className="text-gray-600">Years Experience</div>
                   </div>
                 </div>
