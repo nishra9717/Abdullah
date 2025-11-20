@@ -44,13 +44,19 @@ export function Footer() {
           {/* 1. Logo/Branding Column (Far Left) */}
           <div className="space-y-6 lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-             <Image src="/logo.png" alt="logo" width={48} height={30} />
-              <div>
+<div className="relative w-24 h-12 md:w-32 md:h-16">
+  <Image 
+    src="/logo.png" 
+    alt="logo" 
+    fill 
+    className="object-contain" // The Tailwind equivalent for objectFit: "contain"
+  />
+</div>              {/* <div>
                 <h3 className="text-black font-bold text-lg leading-tight">
                   Abdullah Shahid & Co.
                 </h3>
                 <p className="text-gray-400 text-xs">Chartered Accountants</p>
-              </div>
+              </div> */}
             </Link>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (

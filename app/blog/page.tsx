@@ -41,12 +41,12 @@ export default function BlogPage() {
   ];
 
   const services = [
-    'Internal & External Audit',
-    'Bookkeeping Services',
-    'Tax Planning & Compliance',
-    'Tax Controversy & Litigation',
-    'International Tax',
-    'Financial Consulting',
+    { title: 'Internal & External Audit', href: '/blog/core-services/internal-external-audit' },
+    { title: 'Bookkeeping Services', href: '/blog/core-services/book-keeping-services' },
+    { title: 'Tax Planning & Compliance', href: '/blog/core-services/tax-planning' },
+    { title: 'Tax Controversy & Litigation', href: '/blog/core-services/tax-controversy' },
+    { title: 'International Tax', href: '/blog/core-services/international-tax' },
+    { title: 'Financial Consulting', href: '/blog/core-services/financial-consulting' },
   ];
 
   return (
@@ -94,7 +94,7 @@ export default function BlogPage() {
                 </h2>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                   We are a leading firm of chartered accountants providing professional accounting, audit, and tax 
-                  consulting services with integrity, excellence, and confidentiality. With over 15 years of experience, 
+                  consulting services with integrity, excellence, and confidentiality. With over 10 years of experience, 
                   we have built a reputation for delivering reliable and professional services tailored to meet your 
                   individual requirements.
                 </p>
@@ -152,8 +152,9 @@ export default function BlogPage() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, index) => (
-                <div
+                <Link
                   key={index}
+                  href={service.href}
                   className="bg-card border border-border rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 group"
                 >
                   <div className="flex items-start gap-4">
@@ -161,10 +162,10 @@ export default function BlogPage() {
                       <CheckCircle2 className="w-4 h-4 text-yellow-400 group-hover:text-black transition-colors" />
                     </div>
                     <p className="text-gray-700 font-medium group-hover:text-yellow-400 transition-colors">
-                      {service}
+                      {service.title}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
