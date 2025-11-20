@@ -75,7 +75,7 @@ export default function ContactUs() {
               >
                 <button
                   onClick={handleWhatsApp}
-                  className="w-full bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-green-500/50 relative overflow-hidden"
+                  className="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-green-500/50 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   
@@ -108,7 +108,7 @@ export default function ContactUs() {
               >
                 <button
                   onClick={handleEmailDirect}
-                  className="w-full bg-gradient-to-br from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/50 relative overflow-hidden"
+                  className="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-black rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/50 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   
@@ -118,14 +118,14 @@ export default function ContactUs() {
                       <Sparkles className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-opacity" />
                     </div>
                     
-                    <h3 className="text-3xl font-bold mb-3 text-left">Email Us</h3>
-                    <p className="text-gray-800 text-lg mb-4 text-left">Send detailed inquiries and documents</p>
+                    <h3 className="text-3xl font-bold mb-3 text-white text-left">Email Us</h3>
+                    <p className="text-gray-800 text-lg mb-4 text-white text-left">Send detailed inquiries and documents</p>
                     
                     <div className="bg-yellow-500/50 rounded-2xl p-4 mb-4">
-                      <p className="text-black font-semibold text-lg">info@theasco.com</p>
+                      <p className="text-black font-semibold text-white text-lg">info@theasco.com</p>
                     </div>
                     
-                    <div className="flex items-center gap-2 text-gray-800 text-sm">
+                    <div className="flex text-white items-center gap-2 text-gray-800 text-sm">
                       <Clock className="w-4 h-4" />
                       <span>We&apos;ll respond within 24 hours</span>
                     </div>
@@ -320,11 +320,11 @@ export default function ContactUs() {
                 </div>
                 <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
                   <p className="font-bold text-gray-900 mb-2">Saturday</p>
-                  <p className="text-yellow-400 font-semibold text-lg">10:00 AM - 2:00 PM</p>
+                  <p className="text-yellow-400 font-semibold text-lg">10:00 AM - 6:00 PM</p>
                 </div>
                 <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
                   <p className="font-bold text-gray-900 mb-2">Sunday</p>
-                  <p className="text-red-600 font-semibold text-lg">Closed</p>
+                  <p className="text-yellow-600 font-semibold text-lg">Open</p>
                 </div>
               </div>
             </div>
