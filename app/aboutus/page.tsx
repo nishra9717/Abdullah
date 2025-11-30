@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { TrendingUp, Shield, Users, Award, Target, Eye, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutUs() {
   const [isVisible, setIsVisible] = useState(false);
@@ -168,9 +169,12 @@ export default function AboutUs() {
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-400/20">
-              <div className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                <span className="text-3xl font-bold text-black">AS</span>
-              </div>
+              <Image
+              src="/abdullah-shahid.png" 
+              alt="Abdullah Shahid" 
+              width={150} 
+              height={150} 
+              className="rounded-full mx-auto mb-6 object-cover shadow-lg" />
               <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Abdullah Shahid</h3>
               <p className="text-yellow-400 font-semibold mb-4 text-center">Partner</p>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -178,27 +182,21 @@ export default function AboutUs() {
                 spent 5 years working for KPMG in Pakistan in their assurance, tax and advisory 
                 line of service.
               </p>
-              <p className="text-gray-600 leading-relaxed">
-                He leads assignments and pays close attention to the quality of services being 
-                delivered. His expertise in various areas is leveraged by his team to ensure 
-                that the most efficient and effective strategies are proposed.
-              </p>
+
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-400/20">
-              <div className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                <span className="text-3xl font-bold text-black">ZT</span>
-              </div>
+              <Image
+              src="/zohair-tahir.png" 
+              alt="M. Zohair Tahir" 
+              width={150} 
+              height={150} 
+              className="rounded-full mx-auto mb-6 object-cover shadow-lg" />
               <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">M. Zohair Tahir</h3>
               <p className="text-yellow-400 font-semibold mb-4 text-center">Partner</p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Member of Association of Chartered Certified Accountants. During a career span 
                 of 6 years, he has worked with A.F Ferguson & Co. as tax consultant before moving 
                 to KPMG in their assurance department.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                A finance professional with extensive consultancy and management experience. He 
-                led and executed external audits, buy side due diligence, risk advisory and tax 
-                services for a diverse portfolio of clients.
               </p>
             </div>
           </div>
