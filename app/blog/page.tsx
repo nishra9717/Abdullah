@@ -41,12 +41,12 @@ export default function BlogPage() {
   ];
 
   const services = [
-    { title: 'Internal & External Audit', href: '/blog/core-services/internal-external-audit' },
-    { title: 'Bookkeeping Services', href: '/blog/core-services/book-keeping-services' },
-    { title: 'Tax Planning & Compliance', href: '/blog/core-services/tax-planning' },
-    { title: 'Tax Controversy & Litigation', href: '/blog/core-services/tax-controversy' },
-    { title: 'International Tax', href: '/blog/core-services/international-tax' },
-    { title: 'Financial Consulting', href: '/blog/core-services/financial-consulting' },
+    { title: 'Internal & External Audit', href: '/blog/core-services/internal-external-audit', description: 'Comprehensive audit services to ensure compliance and financial accuracy', icon: Shield },
+    { title: 'Bookkeeping Services', href: '/blog/core-services/book-keeping-services', description: 'Professional bookkeeping and record maintenance for businesses', icon: Calculator },
+    { title: 'Tax Planning & Compliance', href: '/blog/core-services/tax-planning', description: 'Strategic tax planning and compliance solutions for individuals and businesses', icon: FileText },
+    { title: 'Tax Controversy & Litigation', href: '/blog/core-services/tax-controversy', description: 'Expert representation in tax disputes and litigation matters', icon: Target },
+    { title: 'International Tax', href: '/blog/core-services/international-tax', description: 'Cross-border tax planning and international compliance services', icon: TrendingUp },
+    { title: 'Financial Consulting', href: '/blog/core-services/financial-consulting', description: 'Strategic financial advice and business consulting services', icon: PieChart },
   ];
 
   return (
@@ -150,23 +150,42 @@ export default function BlogPage() {
                 Comprehensive accounting and financial services tailored to your needs
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="bg-card border border-border rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 group"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-6 h-6 bg-yellow-400/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-yellow-400 transition-colors">
-                      <CheckCircle2 className="w-4 h-4 text-yellow-400 group-hover:text-black transition-colors" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <Link
+                    key={index}
+                    href={service.href}
+                    className="group relative overflow-hidden rounded-2xl"
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <div className="relative bg-card border border-border rounded-2xl p-8 h-full flex flex-col transition-all duration-300 group-hover:border-yellow-400/50 group-hover:scale-105">
+                      <div>
+                        <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 ${hoveredIndex === index ? 'bg-yellow-400 scale-110' : 'bg-yellow-400/10'}`}>
+                          <Icon className={`w-8 h-8 transition-colors duration-300 ${hoveredIndex === index ? 'text-black' : 'text-yellow-400'}`} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-foreground group-hover:text-yellow-400 transition-colors mb-3">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed mb-6">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="inline-flex items-center text-yellow-400 text-sm font-medium">
+                          Learn More
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-gray-700 font-medium group-hover:text-yellow-400 transition-colors">
-                      {service.title}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

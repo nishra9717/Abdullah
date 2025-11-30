@@ -201,7 +201,7 @@ export default function ContactUs() {
                   icon: Users,
                   title: 'Expert Team',
                   description: 'Dedicated professionals with years of experience in accounting and financial services',
-                  color: 'from-blue-500 to-blue-600',
+                  color: 'from-yellow-400 to-yellow-500',
                   delay: 'delay-400'
                 },
                 {
@@ -215,7 +215,7 @@ export default function ContactUs() {
                   icon: Clock,
                   title: 'Quick Response',
                   description: 'Fast turnaround times and prompt communication for all your queries',
-                  color: 'from-green-500 to-green-600',
+                  color: 'from-yellow-400 to-yellow-500',
                   delay: 'delay-600'
                 }
               ].map((feature, index) => {
@@ -324,7 +324,7 @@ export default function ContactUs() {
                 </div>
                 <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
                   <p className="font-bold text-gray-900 mb-2">Sunday</p>
-                  <p className="text-yellow-600 font-semibold text-lg">Open</p>
+                  <p className="text-yellow-600 font-semibold text-lg">By Appointment</p>
                 </div>
               </div>
             </div>

@@ -17,8 +17,8 @@ export function Footer() {
       { name: 'Terms of Service', href: '/terms-of-service' },
     ],
     Contact: [
-      { name: 'Islamabad : 13 Street 3A, Sector D DHA Phase II, Islamabad, Pakistan.', href: '/contactus', icon: MapPin },
-      { name: 'Sialkot : City Mall Plaza Office No. 8, 13 & 14, 2nd Floor, Kachehri Road, Sialkot, Pakistan. 51310', href: '/contactus', icon: MapPin },
+      { name: 'Islamabad : 13 Street 3A, Sector D DHA Phase II, Islamabad, Pakistan.', href: 'https://goo.gl/maps/iBhugkCxrPsj9VhD8', icon: MapPin },
+      { name: 'Sialkot : City Mall Plaza Office No. 8, 13 & 14, 2nd Floor, Kachehri Road, Sialkot, Pakistan. 51310', href: 'https://goo.gl/maps/iBhugkCxrPsj9VhD8', icon: MapPin },
       { name: 'Office PTCL Numbers', href: 'tel:052-4262067' },
       { name: '052-4262067', href: 'tel:052-4262067', icon: Phone },
       { name: '052-4262068', href: 'tel:052-4262068', icon: Phone },
@@ -44,9 +44,9 @@ export function Footer() {
           {/* 1. Logo/Branding Column (Far Left) */}
           <div className="space-y-6 lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-<div className="relative w-24 h-12 md:w-32 md:h-16">
+<div className="relative w-24 h-12 md:w-42 md:h-20">
   <Image 
-    src="/logo.png" 
+    src="/logo-name.png" 
     alt="logo" 
     fill 
     className="object-contain" // The Tailwind equivalent for objectFit: "contain"
@@ -137,9 +137,9 @@ export function Footer() {
             <p className="text-gray-600 text-sm text-center md:text-left">
               © {currentYear} Abdullah Shahid & Co. Chartered Accountants. All rights reserved.
             </p>
-            <p className="text-gray-500 text-sm">
+            {/* <p className="text-gray-500 text-sm">
               Designed by <Link href="https://github.com/developerzohaib786" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:underline">developerzohaib786</Link>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
