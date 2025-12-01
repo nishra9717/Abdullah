@@ -75,25 +75,24 @@ export default function ContactUs() {
               >
                 <button
                   onClick={handleWhatsApp}
-                  className="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-green-500/50 relative overflow-hidden"
+                  className="w-full bg-white rounded-3xl p-10 shadow-xl border border-yellow-200 transition-all duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/0 via-yellow-400/10 to-yellow-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   
                   <div className="relative">
-                    <div className="flex items-center justify-between mb-6">
-                      <MessageCircle className="w-14 h-14 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
-                      <Sparkles className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+                      <MessageCircle className="w-8 h-8 text-white" />
                     </div>
                     
-                    <h3 className="text-3xl font-bold mb-3 text-left">WhatsApp</h3>
-                    <p className="text-green-50 text-lg mb-4 text-left">Chat with us instantly for quick responses</p>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-3 text-left">WhatsApp</h3>
+                    <p className="text-gray-600 text-lg mb-4 text-left leading-relaxed">Chat with us instantly for quick responses</p>
                     
-                    <div className="bg-green-600/50 rounded-2xl p-4 mb-4">
-                      <p className="text-white font-semibold text-lg">+92-333-7954767</p>
+                    <div className="bg-yellow-400/20 rounded-2xl p-4 mb-4">
+                      <p className="text-gray-900 font-semibold text-lg">+92-333-7954767</p>
                     </div>
                     
-                    <div className="flex items-center gap-2 text-green-100 text-sm">
-                      <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
+                    <div className="flex items-center gap-2 text-gray-600 text-sm">
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
                       <span>Usually responds within minutes</span>
                     </div>
                   </div>
@@ -108,24 +107,23 @@ export default function ContactUs() {
               >
                 <button
                   onClick={handleEmailDirect}
-                  className="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-black rounded-3xl p-10 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/50 relative overflow-hidden"
+                  className="w-full bg-white rounded-3xl p-10 shadow-xl border border-yellow-200 transition-all duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/0 via-yellow-400/10 to-yellow-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   
                   <div className="relative">
-                    <div className="flex items-center justify-between mb-6">
-                      <Mail className="w-14 h-14 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
-                      <Sparkles className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+                      <Mail className="w-8 h-8 text-white" />
                     </div>
                     
-                    <h3 className="text-3xl font-bold mb-3 text-white text-left">Email Us</h3>
-                    <p className="text-gray-800 text-lg mb-4 text-white text-left">Send detailed inquiries and documents</p>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-3 text-left">Email Us</h3>
+                    <p className="text-gray-600 text-lg mb-4 text-left leading-relaxed">Send detailed inquiries and documents</p>
                     
-                    <div className="bg-yellow-500/50 rounded-2xl p-4 mb-4">
-                      <p className="text-black font-semibold text-white text-lg">info@theasco.com</p>
+                    <div className="bg-yellow-400/20 rounded-2xl p-4 mb-4">
+                      <p className="text-gray-900 font-semibold text-lg">info@theasco.com</p>
                     </div>
                     
-                    <div className="flex text-white items-center gap-2 text-gray-800 text-sm">
+                    <div className="flex items-center gap-2 text-gray-600 text-sm">
                       <Clock className="w-4 h-4" />
                       <span>We&apos;ll respond within 24 hours</span>
                     </div>
@@ -140,36 +138,38 @@ export default function ContactUs() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-3xl p-8 shadow-2xl">
-                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                  <Phone className="w-8 h-8 text-yellow-400" />
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-yellow-200">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
                   Call Our Office
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <button
                     onClick={() => handleCall('+923337954767')}
-                    className="bg-gray-700/50 hover:bg-gray-700 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group"
+                    className="bg-yellow-400/10 hover:bg-yellow-400/20 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group border border-yellow-200"
                   >
-                    <p className="text-yellow-400 font-semibold mb-2 text-sm">Whatsapp</p>
-                    <p className="text-xl font-bold group-hover:text-yellow-400 transition-colors">+92-333-7954767</p>
+                    <p className="text-yellow-600 font-semibold mb-2 text-sm">Whatsapp</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">+92-333-7954767</p>
                   </button>
                   <button
                     onClick={() => handleCall('05242620671')}
-                    className="bg-gray-700/50 hover:bg-gray-700 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group"
+                    className="bg-yellow-400/10 hover:bg-yellow-400/20 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group border border-yellow-200"
                   >
-                    <p className="text-yellow-400 font-semibold mb-2 text-sm">Office Phone </p>
-                    <p className="text-xl font-bold group-hover:text-yellow-400 transition-colors">052-4262067</p>
+                    <p className="text-yellow-600 font-semibold mb-2 text-sm">Office Phone</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">052-4262067</p>
                   </button>
                   <button
                     onClick={() => handleCall('05242620682')}
-                    className="bg-gray-700/50 hover:bg-gray-700 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group"
+                    className="bg-yellow-400/10 hover:bg-yellow-400/20 rounded-2xl p-6 transition-all duration-300 hover:scale-105 group border border-yellow-200"
                   >
-                    <p className="text-yellow-400 font-semibold mb-2 text-sm">Office Phone</p>
-                    <p className="text-xl font-bold group-hover:text-yellow-400 transition-colors">052-4262068</p>
+                    <p className="text-yellow-600 font-semibold mb-2 text-sm">Office Phone</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">052-4262068</p>
                   </button>
                 </div>
-                <div className="mt-6 flex items-center gap-2 text-gray-400 text-sm">
-                  <Clock className="w-4 h-4" />
+                <div className="mt-6 flex items-center gap-2 text-gray-600 text-sm">
+                  <Clock className="w-4 h-4 text-yellow-400" />
                   <span>Available Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
                 </div>
               </div>
@@ -326,6 +326,48 @@ export default function ContactUs() {
                   <p className="font-bold text-gray-900 mb-2">Sunday</p>
                   <p className="text-yellow-600 font-semibold text-lg">By Appointment</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-white relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Find Us on Map
+              </h2>
+              <p className="text-xl text-gray-600">
+                Visit our offices or get directions to reach us easily
+              </p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-yellow-50 to-white rounded-3xl p-8 shadow-xl border border-yellow-200">
+              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3378.5555555555557!2d74.5555555!3d32.5555555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDMzJzIwLjAiTiA3NMKwMzMnMjAuMCJF!5e0!3m2!1sen!2s!4v1234567890123"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Abdullah Shahid & Co. Office Location"
+                ></iframe>
+              </div>
+              <div className="mt-6 text-center">
+                <a
+                  href="https://goo.gl/maps/iBhugkCxrPsj9VhD8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  <MapPin className="w-5 h-5" />
+                  Open in Google Maps
+                </a>
               </div>
             </div>
           </div>
